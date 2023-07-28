@@ -1,0 +1,199 @@
+<%- include('header') -%>
+    <main>
+      <div id="feed">
+        <form action="/profile" method="post" enctype="multipart/form-data">
+          <section id="prl">
+            <div id="picture">
+
+              <%if(image === null || typeof image == 'undefined'){}else{%>
+              <img src="data:image/<%=image.contentType%>;base64,
+					<%=image.data.toString('base64')%>">
+          <%}%>
+            </div>
+            <div id="banner"></div>
+            <div id="details">
+              <div class="container">
+                <h1 id="username">User</h1>
+                <p id="about">About</p>
+                <p id="contactinfo">Contact Info</p>
+                <p id="email_id">Email ID</p>
+                <span>
+                  <p id="address">Address</p>
+                </span>
+              
+              </div>
+            </div>
+            <div id="edit-profdetails">
+              <div class="edit-profdetails">
+                  <table class="profile-table">
+                    <tr>
+                      <th>User Name:</th>
+                      <td>
+                        <input type="text" id="uname" name="uname" value="" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>About:</th>
+                      <td><input type="text" id="abt" name="abt" value="" /></td>
+                    </tr>
+                    <tr>
+                      <th>Contact Info:</th>
+                      <td>
+                        <input type="text" id="cinfo" name="cinfo" value="" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Address:</th>
+                      <td><input type="text" id="add" name="add" value="" /></td>
+                    </tr>
+                    <tr>
+                      <td>
+                        
+                      </td>
+                    </tr>
+                  </table>
+
+              </div>
+            </div>
+          </section>
+
+          <section id="guides">
+            <div class="article">
+              <h2>Experience</h2>
+              <div class="edit-content1">
+                  <textarea type="text" width=20% name="exp" id="edited-content1" rows="8" cols="80"><%if(data.profile == null || typeof data.profile == 'undefined'){%>Enter your experience <%}else{%><%=data.profile.experience%><%}%></textarea><br/>
+                  
+
+              </div>
+
+              <div class="display-content1">
+                <p id="show-final-content1">Enter your work Experience</p>
+                
+              </div>
+            </div>
+
+            <div class="article">
+              <h2>Education</h2>
+              <div class="edit-content2">
+                  <textarea type="text" name="edu" id="edited-content2" rows="8" cols="80"><%if(data.profile == null || typeof data.profile == 'undefined'){%>Enter your education<%}else{%><%=data.profile.education%><%}%></textarea><br/>
+                  
+
+              </div>
+              <div class="display-content2">
+                <p id="show-final-content2">Enter your Education</p>
+                
+
+              </div>
+            </div>
+            <div class="article">
+              <h2>Skills</h2>
+              <div class="edit-content3">
+                  <textarea name="skill" type="text" id="edited-content3" rows="8" cols="80"><%if(data.profile == null || typeof data.profile == 'undefined'){%>Enter your skills <%}else{%><%=data.profile.skills%><%}%></textarea><br />
+                  <br><br>
+                  <label for="image"><h3>Profile Picture</h3> <small> (png)</small></label>
+                  <br>
+                  <br>
+                  <input type="file" id="image" name="image" value="" >
+                  <br> <br> <br>
+                  <input type="submit" class="click-button" value="Submit" onclick="mySubmitFunction()">
+              </div>
+              <div class="display-content3">
+                <p id="show-final-content3">Enter your Skills</p>
+                <input type="button" class="click-button" value="Edit" onclick="myEditFunction()">
+                <br><br><br>
+                <%if(data.courses == null || typeof data.courses == 'undefined' || JSON.stringify(data.courses) == '[]'){}else{%>
+                <h2>Courses</h2>
+                <div id="allCourses">
+                  <%data.courses.forEach((element)=>{%>
+                    <div class = 'course'>
+                    <b class="courseName"><%=element.courseName%></b>
+                    <small class="courseScore">Score: <%=element.score%>/10</small>
+                  </div>
+                    <br><hr>
+                    <br>
+                <%})}%>
+              </div>
+
+              </div>
+            </div>
+          </section>
+        </form>
+      </div>
+    </main>
+    <footer>
+      <p></p>
+    </footer>
+    <script
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
+      type="text/javascript"
+    ></script>
+    <script>
+      <%if(data.profile.name == "" || typeof data.profile.name == 'undefined'){%>
+        
+        document.getElementById("username").innerText = "Username";
+        document.getElementById("about").innerText = "About";
+        document.getElementById("contactinfo").innerText = "Contact Info";
+        document.getElementById("address").innerText = "Address";
+        document.getElementById("email_id").innerText = '<%=data.email_id%>';
+         <%} else {%>
+        document.getElementById("username").innerText = '<%=data.profile.name%>';
+        document.getElementById("about").innerText = '<%=data.profile.about%>';
+        document.getElementById("contactinfo").innerText = '<%=data.profile.contactInfo%>';
+        document.getElementById("address").innerText = '<%=data.profile.address%>';
+        document.getElementById("email_id").innerText = '<%=data.email_id%>';
+        document.getElementById("show-final-content1").innerText = '<%=data.profile.experience%>';
+        document.getElementById("show-final-content2").innerText ='<%=data.profile.education%>';
+        document.getElementById("show-final-content3").innerText ='<%=data.profile.skills%>';
+        <%if(image == null || typeof image == 'undefined'){%>
+        document.getElementById("picture").style.backgroundImage = "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIg74DLmQxFVxzS_-jAsHnWeJGfNZEgQtWsA_cYgmmpg&s')";
+        <%}%>
+        <%}%>
+
+
+      function myEditFunction() {
+        $(".display-content1").css("display", "none");
+        $(".edit-content1").css("display", "block");
+
+        $(".display-content2").css("display", "none");
+        $(".edit-content2").css("display", "block");
+
+        $(".display-content3").css("display", "none");
+        $(".edit-content3").css("display", "block");
+
+        $("#details").css("display", "none");
+        $("#edit-profdetails").css("display", "block");
+        document.getElementById("uname").value =
+          document.getElementById("username").innerText;
+        document.getElementById("abt").value =
+          document.getElementById("about").innerText;
+        document.getElementById("cinfo").value =
+          document.getElementById("contactinfo").innerText;
+        document.getElementById("add").value =
+          document.getElementById("address").innerText;
+          document.getElementById("edit_content1").innerText =
+            document.getElementById("show-final-content1").innerText;
+            document.getElementById("edit_content2").value =
+              document.getElementById("show-final-content2").innerText;
+              document.getElementById("edit_content3").value =
+                document.getElementById("show-final-content3").innerText;
+
+
+      }
+      function mySubmitFunction() {
+
+        $(".display-content1").css("display", "block");
+        $(".edit-content1").css("display", "none");
+     
+        $(".display-content2").css("display", "block");
+        $(".edit-content2").css("display", "none");
+      
+        $(".display-content3").css("display", "block");
+        $(".edit-content3").css("display", "none");
+        
+          $("#details").css("display", "block");
+          $("#edit-profdetails").css("display", "none");
+          
+      }
+    </script>
+  </body>
+</html>

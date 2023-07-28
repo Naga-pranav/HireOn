@@ -1,0 +1,415 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+
+html {
+  display: grid;
+  height: 100%;
+  margin:0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  display: grid;
+  font-family:'Lato', sans-serif;
+  min-height: 90%;
+}
+
+.container-chat {
+  position: absolute;
+  width: 90%;
+  height: 80%;
+  margin-top: 100px;
+}
+
+.messages {
+  position: absolute;
+  background: aliceblue;
+  opacity: 0.5;
+  width: 30%;
+  height: 100%;
+  top: -1%;
+  margin-top: 1%;
+  margin-left: 3%;
+  border: 1px solid black;
+  border-radius: 10px 0 0 10px;
+  box-shadow: -5px 5px 10px rgba( #777777, .5);
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+.people {
+  padding-left: 20px;
+  position: absolute;
+  color: #000000;
+  width: 100%;
+  left:-11%;
+  top: 2%;
+  line-height: 0.7em;
+}
+  .title{
+     text-transform: uppercase;
+     font-size: 15px;
+     font-weight: bold;
+     margin-right: 30%;
+     letter-spacing: 1px;
+   }
+   .preview {
+     font-size: 15px;
+   }
+
+   .title1{
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: bold;
+      margin-right: 30%;
+      letter-spacing: 1px;
+      color: green;
+    }
+    .preview1 {
+      font-size: 15px;
+      color: green;
+    }
+  .time {
+    font-size: 15px;
+    position: absolute;
+    right: 10px;
+    margin-top: 2px;
+  }
+
+
+.person {
+  padding: 12px 0 12px 0px;
+  border-bottom: 1px solid  #79C7C5;
+  line-height: 20px;
+  cursor: pointer;
+  width: 90%;
+  margin-left: 35px;
+}
+  .person:hover {
+    background:  Ivory;
+  }
+
+
+.profile-sidebar-need{
+  position: absolute;
+  left: 30%;
+  top: 7%;
+}
+.name2{
+  position: absolute;
+  top: 50px;
+
+  text-transform: uppercase;
+  color: black;
+  font-size: .8em;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.email {
+  color: black;
+  font-size: .5em;
+  margin-top: 2px;
+  text-transform: lowercase;
+}
+
+.chatbox {
+  position: relative;
+  left: 35%;
+  height: 100%;
+  top:-1%;
+  width: 60%;
+  border-radius: 10px 10px 10px 10px;
+  border: 2px solid DeepSkyBlue;
+  margin-top: 1%;
+  box-shadow: 5px 5px 15px rgba(#777777, 0.5);
+}
+
+.top-bar {
+  width: 100%;
+  height: 60px;
+  border-radius: 10px 10px 0 0;
+}
+
+.avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  position: absolute;
+  top: 11px;
+}
+.avatar img{
+   width: 100%;
+   height: 100%;
+   border-radius: 20%;
+}
+.name {
+  position: absolute;
+  top: 22px;
+  color: black;
+  font-size: .8em;
+  letter-spacing: 1px;
+  font-weight: 750;
+  left: 10px;
+}
+
+.menu {
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  width: 10px;
+  height: 20px;
+  cursor: pointer;
+}
+  .menu:hover {
+    transform: scale(1.1);
+    transition: all .3s ease-in;
+  }
+
+
+.icons {
+  position: absolute;
+  color: #A1E2D9;
+  padding: 10px;
+  top: 5px;
+  right: 21px;
+  cursor: pointer;
+
+}
+.icons img{
+  height: 20px;
+  width: 20px;
+  padding: 2px 4px;
+}
+.dots {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background-color: #79C7C5;
+  box-shadow: 0px 7px 0px #79C7C5, 0px 14px 0px #79C7C5;
+}
+
+.middle {
+  position: absolute;
+  background: lightgrey;
+  width: 100%;
+  opacity: 0.85;
+  top: 60px;
+  height: 80%;
+}
+
+.incoming {
+  position: relative;
+  width: 50%;
+  height: 35%;
+  padding: 5px;
+}
+  .incoming .bubble {
+    background: #79C7C5;
+  }
+
+
+
+.bubble {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 5px;
+  color: blue;
+  font-size: 0.7em;
+  padding: 10px 10px 10px 12px;
+  border-radius: 20px;
+}
+
+.lower {
+  margin-top: 45px;
+}
+
+.outgoing {
+  position: relative;
+  padding: 5px;
+  right: 0;
+  top: 15%;
+  width: 98%;
+  height: 35%;
+}
+.outgoing .bubble {
+  background: #79C7C5;
+  float: right;
+}
+.outgoing .bubble2{
+  clear: both;
+}
+
+
+.bottom-bar {
+  position: absolute;
+  width: 100%;
+  height: 55px;
+  bottom: 0;
+  background: white;
+  border-radius: 0 0 10px 10px;
+}
+.bottom-bar .chat img
+{
+  height: 40px;
+  width: 40px;
+  padding-left: 20px;
+  padding-top: 10px;
+}
+#file-upl{
+  width: 10px;
+  height: 10px;
+  left: 2%;
+  background: url('https://th.bing.com/th/id/OIP.8Jwx9OHQextq_67Q8Nw9tQHaHa?w=196&h=196&c=7&r=0&o=5&pid=1.7');
+}
+.left {
+  left: 0px;
+}
+
+#type {
+  padding: 7px;
+  width: 74%;
+  left: 2%;
+  position: absolute;
+  border: 1px grey solid;
+  border-radius: 20px;
+  top: 13px;
+  background: white;
+  color: DeepSkyBlue;
+
+
+}
+
+#type::placeholder {
+  color: DeepSkyBlue;
+}
+
+#type:focus {
+  color: #777777;
+  outline: 0;
+}
+
+button {
+  position: absolute;
+  border: 0;
+  font-size: 1em;
+  color: DeepSkyBlue;
+  top:  19px;
+  opacity: 0.8;
+  right: 17px;
+  cursor: pointer;
+  outline: 0;
+}
+button:hover {
+  transform: scale(1.1);
+  transition: all .3s ease-in-out;
+  color: black;
+}
+
+.button {
+  position: absolute;
+  border: 0;
+  font-size: 1em;
+  color: DeepSkyBlue;
+  top:  19px;
+  opacity: 0.8;
+  right: 17px;
+  cursor: pointer;
+  background: none;
+  outline: 0;
+}
+.button:hover {
+  transform: scale(1.1);
+  transition: all .3s ease-in-out;
+  color: black;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+.header{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  justify-content: space-around;
+  z-index: 999;
+  border-bottom: 2px solid lightgray;
+  padding: 10px;
+  display: flex;
+  background-color: rgb(0, 140, 255);
+  height: 50px;
+
+}
+div.header-left h3{
+height: 40px;
+margin-right: 10px;
+text-align: left !important;
+margin-top: 10px;
+}
+div.header-left{
+  display: flex;
+}
+div.header-left h3{
+  font-size: 1.3em;
+  margin-right: 30px;
+}
+div.header-search{
+  padding: 10px;
+  align-items: center;
+  display: flex;
+  border-radius: 5px;
+  height: 18px;
+  color: gray;
+  background-color: #e9eef3;
+}
+div.header-search> input{
+  outline: none;
+  border: none;
+  background: none;
+}
+.header div#profile{
+  margin-top: -8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+.header div#profile img{
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+.header div#profile span{
+  font-size: 14px;
+}
+.header-right{
+  display: flex;
+}
+div.headerOptions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+  color: black;
+  cursor: pointer;
+}
+div.headerOptions:hover{
+  color: white;
+}
+div.headerOptions h5{
+  font-size: 15px;
+  font-weight: 400;
+  margin-top: 10px;
+}

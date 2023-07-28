@@ -1,0 +1,79 @@
+<%- include('header') -%>
+  </div>
+    <div class="course-container">
+      <div class="module">
+        <br><br>
+        <form action="/course1" method="post" >
+          
+          <button type="submit" name="testTake" value='<%=ID%>' id="">Take Test</button><br><br>
+       </form>
+          <!-- <button><a href="http://localhost:3000/test">Take Test</a></button><br><br> -->
+          <label  class="course-title"><font size="5">Course Outline</font></label><hr>
+          <label class="modulept" for="" onclick="disp('1')">Module 1</label><hr>
+          <label  class="modulept" for="" onclick="disp('2')">Module 2</label><hr>
+          <label  class="modulept" for="" onclick="disp('3')">Module 3</label><hr>
+          <label  class="modulept" for="" onclick="disp('4')">Module 4</label><hr>
+          <label  class="modulept" for="" onclick="disp('5')">Module 5</label><hr>
+          <label class="modulept" onclick="disp('6')">Materials</label>
+      </div>
+      <div class="video">
+        <div class="Intro">
+          <img height="400" height="250" src="https://www.udacity.com/blog/wp-content/uploads/2020/06/HTML_Blog-scaled.jpeg" alt="">
+          <p>Lets Get Started!!</p>
+        </div>
+        <div class="module1-container">
+          <iframe width="700" height="375" src="https://www.youtube.com/embed/-USAeFpVf_A" title="YouTube video player"
+          frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+          encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="module2-container">
+          <iframe width="700" height="375" src="https://www.youtube.com/embed/i3GE-toQg-o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+             encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="module3-container">
+          <iframe width="700" height="375" src="https://www.youtube.com/embed/09oErCBjVns" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+             encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="module4-container">
+          <iframe width="700" height="375" src="https://www.youtube.com/embed/wvR40su_XBM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+             encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="module5-container">
+          <iframe width="700" height="375" src="https://www.youtube.com/embed/U4UHoiK6Oo4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
+             encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="Materials">
+          <table class="materials" border="1" cellspacing="0">
+            <caption><b><font size="4">Reference Materials</font></b></caption>
+            <tr>
+              <td>1.</td>
+              <td><a href="https://www.w3schools.com/html/">www.W3Schools.com</a></td>
+            </tr>
+            <tr>
+              <td>2.</td>
+              <td><a href="https://drive.google.com/file/d/1GlM-BGtXzGNMXvF877jA3E2y-sYCHK5U/view?usp=sharing">Reference Text Book</a></a></td>
+            </tr>
+          </table>
+      </div>
+    </div>
+  </body>
+<script type="text/javascript">
+  function disp(x)
+  {
+    for(var i=0;i<5;i++)
+    {
+      var name="module"+(i+1)+"-container";
+      document.getElementsByClassName(name)[0].style.display="none";
+    }
+    document.getElementsByClassName("Intro")[0].style.display="none";
+    document.getElementsByClassName("Materials")[0].style.display="none";
+    if(x==6){
+      document.getElementsByClassName("Materials")[0].style.display="flex";
+    }
+
+    var name="module"+x+"-container";
+    document.getElementsByClassName(name)[0].style.display="flex";
+  }
+
+</script>
+</html>
